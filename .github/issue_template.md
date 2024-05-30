@@ -4,4 +4,4 @@
 
 ## Screenshots / links (if needed) 📸
 
-**« Add screenshots or useful links fot eh issue (Inspiration, schemas, drawings...) »**
+**« Add screenshots or useful links for the issue (Inspiration, schemas, drawings...) »**
