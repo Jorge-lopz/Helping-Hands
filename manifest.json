@@ -1,0 +1,39 @@
+{
+  "short_name": "Helping Hands",
+  "name": "Helping Hands",
+  "id": "./",
+  "description": "A platform to offer and request help",
+  "icons": [
+    {
+      "src": "./assets/icons/helping_hands-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./assets/icons/helping_hands-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "dir": "ltr",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "screenshots": [
+    {
+      "src": "./assets/images/home.png",
+      "sizes": "1517x811",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Home Screen"
+    },
+    {
+      "src": "./assets/images/faq.png",
+      "sizes": "1532x767",
+      "type": "image/png",
+      "label": "FAQ Screen"
+    }
+  ]
+}

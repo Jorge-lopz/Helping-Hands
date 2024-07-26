@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helping Hands</title>
+    <link rel="shortcut icon" href="./assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="global.css">
+    <link rel="manifest" href="./manifest.json">
+    <script src="./scripts/index.js" defer></script>
+</head>
+
+<!-- Smooth Scrolling -->
+<!-- <script src="./smoothscroll-for-websites/SmoothScroll.js"></script> -->
+
+<body>
+    <header>
+        <h1>Helping Hands</h1>
+        <nav>
+            <a href="#">Search</a>
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+            <!-- <a href="#contact">Contact</a> -->
+        </nav>
+        <div class="actions">
+            <button id="login">Log In</button>
+            <!-- <button id="register">Register</button> -->
+        </div>
+    </header>
+    <div id="hands-container">
+        <img src="./assets/icons/helping_hands.svg" alt="Hand Image" draggable="false">
+        <img src="./assets/icons/helping_hands.svg" alt="Hand Image" draggable="false">
+        <img src="./assets/icons/helping_hands.svg" alt="Hand Image" draggable="false">
+        <img src="./assets/icons/helping_hands.svg" alt="Hand Image" draggable="false">
+        <img src="./assets/icons/helping_hands.svg" alt="Hand Image" draggable="false">
+    </div>
+    <main>
+        <section id="hero">
+            <h2>The platform to offer and request help</h2>
+            <h3>Volunteering was never this simple</h3>
+        </section>
+        <div class="search-bar">
+            <input type="text" placeholder="Search..." id="search" aria-autocomplete="none" autocomplete="off">
+            <a id="search-button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20px" height="20px">
+                    <title>Search</title>
+                    <path
+                        d="M16.1 260.2c-22.6 12.9-20.5 47.3 3.6 57.3L160 376l0 103.3c0 18.1 14.6 32.7 32.7 32.7c9.7 0 18.9-4.3 25.1-11.8l62-74.3 123.9 51.6c18.9 7.9 40.8-4.5 43.9-24.7l64-416c1.9-12.1-3.4-24.3-13.5-31.2s-23.3-7.5-34-1.4l-448 256zm52.1 25.5L409.7 90.6 190.1 336l1.2 1L68.2 285.7zM403.3 425.4L236.7 355.9 450.8 116.6 403.3 425.4z" />
+                </svg>
+            </a>
+            <select id="filter">
+                <option value="any">Any</option>
+                <option value="offers">Offers</option>
+                <option value="requests">Requests</option>
+            </select>
+        </div>
+        <section id="cta">
+            <div>
+                <h4>Ever wanted to volunteer but didn't know how?</h4>
+                <p>Helping Hands connects helpers with those in need to make the process seamless.</p>
+            </div>
+            <button>Get Started</button>
+        </section>
+        <section id="features">
+            <div>
+                <h4>REQUEST HELP</h4>
+                <div id="request-help-container">
+                    <img src="./assets/images/request_help.png" style="transform: rotate(25deg);">
+                    <div>
+                        <p style="--img: url('./assets/images/community.png')">Share your needs in a helpful and friendly community.</p>
+                        <p style="--img: url('./assets/images/options.png')">Personalize your request with a wide range of options.</p>
+                        <p style="--img: url('./assets/images/privacy.png')">Keep your information secure and private.</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h4>OFFER HELP</h4>
+                <div id="offer-help-container">
+                    <div style="margin-left: 4rem;">
+                        <p style="--img: url('./assets/images/world.png')">Join a ever growing community making a real diference.</p>
+                        <p style="--img: url('./assets/images/decision.png')">Decide how to help, there's always a something for you.</p>
+                        <p style="--img: url('./assets/images/impact.png')">Solve problems and discover your true impact.</p>
+                    </div>
+                    <img src="./assets/images/offer_help.png">
+                </div>
+            </div>
+        </section>
+        <section id="about">
+            <h1>ABOUT</h1>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <input type="checkbox" id="item-1" name="accordion">
+                    <label for="item-1"><span>▸</span>What is Helping Hands?</label>
+                    <div class="content">
+                        <p>Helping Hands is an unified platform where users publish help offers and requests. Its main objective is to
+                            simplify volunteering work so that anyone can jump right in.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <input type="checkbox" id="item-2" name="accordion">
+                    <label for="item-2"><span>▸</span>Why Helping Hands?</label>
+                    <div class="content">
+                        <p>The idea behind Helping Hands came from the overwhelming feeling some people suffer when trying to find
+                            volunteering opportunities.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <input type="checkbox" id="item-3" name="accordion">
+                    <label for="item-3"><span>▸</span>Is it free?</label>
+                    <div class="content">
+                        <p>Of course, every service on the platform is 100% free. Our main focus are those in need and anyone willing to
+                            help. The only costs users need to account for are transportation or any material needed for the specific help
+                            offer or request.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="cta-2">
+            <p>What are you waiting for?</p>
+            <button onclick="window.location.href='#'">JUMP IN</button>
+        </div>
+    </main>
+    <footer>
+        <div id="legal">
+            <img src="./assets/icons/helping_hands.svg" alt="Logo">
+            <p>© 2024 Helping Hands.<br>All rights reserved.</p>
+        </div>
+        <div id="social">
+            <a href="mailto:jlpenero2005@gmail.com" title="Email"><img src="./assets/images/mail.svg" alt="Email"></a>
+            <a href="https://github.com/Jorge-lopz/Helping-Hands" title="Github"><img src="./assets/images/github.svg" alt="Github"></a>
+        </div>
+    </footer>
+
+</body>
+
+<!-- <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./scripts/service-worker.js');
+    }    
+</script> -->
+
+</html>
