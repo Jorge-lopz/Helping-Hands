@@ -19,16 +19,69 @@
     <header>
         <h1>Helping Hands</h1>
         <nav>
-            <a href="#">Search</a>
+            <a href="#">Start</a>
             <a href="#features">Features</a>
             <a href="#about">About</a>
             <!-- <a href="#contact">Contact</a> -->
         </nav>
         <div class="actions">
-            <button id="login">Log In</button>
-            <!-- <button id="register">Register</button> -->
+            <button id="launch" onclick="loginPopupOpen()">Launch</buttonid>
+                <!-- <button id="register">Register</button> -->
         </div>
     </header>
+    <div id="popup-backdrop" onclick="loginPopupClose()"></div>
+    <div id="login-popup">
+        <div id="form">
+            <div id="form-login">
+                <h2>LOG IN</h2>
+                <input type="email" name="login-email" id="login-email" placeholder="Email">
+                <input type="password" name="login-password" id="login-password" placeholder="Password">
+                <button id="login">Log in</button>
+            </div>
+            <div id="form-register" style="display: none;">
+                <h2>REGISTER</h2>
+                <input type="text" name="register-name" id="register-name" placeholder="Name">
+                <input type="email" name="register-email" id="register-email" placeholder="Email">
+                <input type="password" name="register-password" id="register-password" placeholder="Password">
+                <input type="password" name="register-confirm-password" id="register-confirm-password" placeholder="Confirm Password">
+                <button id="register">Register</button>
+            </div>
+        </div>
+        <div id="info">
+            <div id="info-content">
+                <div id="register-prompt">
+                    <h2>New here?</h2>
+                    <button onclick="
+                        document.getElementById('form-login').style.display = 'none'; 
+                        document.getElementById('form-register').style.display = 'flex';
+                        document.getElementById('register-prompt').style.display = 'none';
+                        document.getElementById('login-prompt').style.display = 'block';">
+                        Register</button>
+                </div>
+                <div id="login-prompt" style="display: none;">
+                    <h2>Already have an account?</h2>
+                    <button onclick="
+                        document.getElementById('form-login').style.display = 'flex'; 
+                        document.getElementById('form-register').style.display = 'none';
+                        document.getElementById('register-prompt').style.display = 'block';
+                        document.getElementById('login-prompt').style.display = 'none';">
+                        Log In</button>
+                </div>
+                <div>
+                    <input type="checkbox" id="organisation-prompt">
+                    <label for="organisation-prompt"><span>▸</span>Are you an organisation?</label>
+                    <div class="content">
+                        <p>Although Helping Hands was designed with users in mind, organisations can also create a profesional profile with
+                            custom properties and functionalities.<br><br>
+                            Interested? <b>Contact us!</b> &nbsp;
+                            <a href="mailto:jlpenero2005@gmail.com" title="Email"><sub><img src="./assets/images/mail.svg" alt="Email"
+                                        width="22px"></sub></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="hands-container">
         <img src="./assets/icons/helping_hands.svg" alt="Hand Image" draggable="false">
         <img src="./assets/icons/helping_hands.svg" alt="Hand Image" draggable="false">
@@ -61,7 +114,7 @@
                 <h4>Ever wanted to volunteer but didn't know how?</h4>
                 <p>Helping Hands connects helpers with those in need to make the process seamless.</p>
             </div>
-            <button>Get Started</button>
+            <button onclick="loginPopupOpen()">Get Started</button>
         </section>
         <section id="features">
             <div>
@@ -119,7 +172,7 @@
         </section>
         <div id="cta-2">
             <p>What are you waiting for?</p>
-            <button onclick="window.location.href='#'">JUMP IN</button>
+            <button onclick="loginPopupOpen()">JUMP IN</button>
         </div>
     </main>
     <footer>

@@ -10,3 +10,18 @@ searchBox.addEventListener("input", () => {
     searchButton.removeAttribute("href");
   }
 });
+
+const popupBackdrop = document.getElementById("popup-backdrop");
+const loginPopup = document.getElementById("login-popup");
+
+function loginPopupOpen() {
+  popupBackdrop.classList.add("visible");
+  loginPopup.classList.add("visible");
+  document.querySelector("html").style.overflowY = "hidden";
+}
+
+function loginPopupClose() {
+  popupBackdrop.classList.remove("visible");
+  loginPopup.classList.remove("visible");
+  document.querySelector("html").style.overflowY = "auto";
+}

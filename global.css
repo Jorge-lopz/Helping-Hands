@@ -51,6 +51,7 @@ body {
   max-width: 1530px;
   margin-inline: auto;
   padding: 0 10px;
+  overflow-x: hidden;
 }
 
 header {
@@ -93,7 +94,7 @@ header {
   .actions {
     display: flex;
 
-    #login {
+    #launch {
       margin-right: 0.2rem;
       background: #2c2c2c;
       color: #fff;
@@ -129,7 +130,173 @@ header {
 }
 @keyframes header-nav-opacity {
   to {
+    pointer-events: all;
     opacity: 1;
+  }
+}
+
+#popup-backdrop {
+  opacity: 0;
+  position: fixed;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  inset: 0;
+  z-index: 999;
+  background: #00000070;
+  transition: opacity 0.15s linear;
+  &.visible {
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity 0.25s linear;
+  }
+}
+#login-popup {
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+  width: 70%;
+  max-width: 1000px;
+  height: 65%;
+  max-height: 420px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  z-index: 1000;
+  border-radius: 11px;
+  background: linear-gradient(to bottom right, #fcfcfc, #f9f9f9);
+  box-shadow: #00000030 3px 3px 10px;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  transition: opacity 0.15s linear, transform 0.15s linear;
+
+  &.visible {
+    pointer-events: all;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    transition: opacity 0.15s linear, transform 0.25s linear;
+  }
+
+  h2 {
+    font-size: clamp(18px, 2.5vw, 24px);
+  }
+
+  #form,
+  #info {
+    margin-block: 2rem 2rem;
+    padding-block: 0 1rem;
+    width: 50%;
+    & > * {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+
+  button {
+    margin: 0;
+    margin-top: 1rem;
+    color: #fdfdfd;
+    border-radius: 10px;
+    background: #2e2e2e;
+    transition: background 0.4s ease-in-out;
+
+    &:hover,
+    &:focus-visible {
+      background: #151515;
+    }
+  }
+
+  #form {
+    padding-right: 1rem;
+    border-right: #cacaca 1px solid;
+
+    input {
+      width: 70%;
+      border: #d9d9d9 1px solid;
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      font-size: 15px;
+    }
+  }
+  #info {
+    border-left: #cacaca 1px solid;
+    padding-left: 1rem;
+
+    button {
+      color: #000;
+      background: #fff;
+      border-color: #e0e0e0;
+      transition: border 0.2s linear;
+
+      &:hover,
+      &:focus-visible {
+        border-color: #2c2c2c;
+      }
+    }
+
+    #info-content {
+      justify-content: space-between;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      height: 100%;
+    }
+
+    #register-prompt,
+    #login-prompt {
+      margin-top: 1.5rem;
+      button {
+        margin-top: 0;
+      }
+    }
+
+    label {
+      display: block;
+      font-weight: 500;
+      padding-right: 1rem;
+      padding-block: 0.75rem;
+      font-size: 17px;
+      cursor: pointer;
+      position: relative;
+
+      span {
+        margin-right: 0.5rem;
+        display: inline-block;
+        font-size: 1.1rem;
+        transform: rotate(0) scale(1.5);
+        transition: transform 0.5s ease;
+      }
+    }
+    input[type="checkbox"] {
+      display: none;
+
+      &:checked {
+        ~ label > span {
+          transform: rotate(90deg);
+        }
+        ~ .content {
+          max-height: 200px;
+          transition: max-height 0.5s ease;
+        }
+      }
+    }
+    .content {
+      text-align: left;
+      max-height: 0;
+      padding-block: 0;
+      padding-inline: 30px 25px;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+      p {
+        margin: 10px 0;
+      }
+    }
   }
 }
 
@@ -185,7 +352,8 @@ footer {
       img {
         width: 30px;
         transition: transform 0.3s ease;
-        &:hover {
+        &:hover,
+        &:focus-visible {
           transform: scale(1.1);
         }
       }
@@ -196,6 +364,7 @@ footer {
 @media (width < 640px) {
   header {
     nav {
+      pointer-events: none;
       opacity: 0;
       animation: header-nav-opacity linear both, header-nav linear both;
       animation-timeline: scroll();
@@ -215,6 +384,52 @@ footer {
       display: flex;
       a > img {
         width: 25px;
+      }
+    }
+  }
+}
+
+@media (width < 900px) {
+  #login-popup {
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    max-height: none;
+    height: max-content;
+    align-items: center;
+    justify-content: center;
+    padding-inline: max(2.5rem, 5vw);
+    #form,
+    #info {
+      width: 100%;
+      border: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      min-width: 320px;
+
+      & > * {
+        gap: 0.5rem;
+      }
+
+      &#form {
+        justify-content: baseline;
+        padding-bottom: 2rem !important;
+        & > * {
+          width: 100%;
+        }
+        input {
+          width: 80%;
+          max-width: 350px;
+        }
+      }
+      &#info {
+        border-top: #cacaca 1px solid !important;
+        padding-top: 1rem !important;
+        #info-content {
+          gap: 1rem;
+        }
+        #info-content > * {
+          margin-top: 0 !important;
+        }
       }
     }
   }
