@@ -95,9 +95,22 @@ header {
     display: flex;
 
     #launch {
-      margin-right: 0.2rem;
+      margin: 0;
+      margin-right: 0.25rem;
       background: #2c2c2c;
       color: #fff;
+      text-decoration: none;
+      margin-left: 15px;
+      padding: 10px 24px;
+      border-radius: 40px;
+      font-family: "Rubik", Arial, sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      text-transform: uppercase;
+      height: min-content;
+      cursor: pointer;
+      text-wrap: nowrap;
+      transition: border 0.3s ease-in-out, background 0.3s ease-in-out, color 0.3s ease-in-out;
       &:hover,
       &:focus-visible {
         background: #101;

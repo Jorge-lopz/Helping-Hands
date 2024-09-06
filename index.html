@@ -10,9 +10,8 @@
         content="volunteering, offer help, request help, community support, volunteer network, simplify volunteering, Helping Hands" />
     <title>Helping Hands</title>
     <link rel="shortcut icon" href="./assets/icons/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="global.css">
-    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="./assets/styles/index.css">
+    <link rel="stylesheet" href="./assets/styles/global.css">
     <script src="./scripts/index.js" defer></script>
 </head>
 
@@ -29,10 +28,12 @@
             <!-- <a href="#contact">Contact</a> -->
         </nav>
         <div class="actions">
-            <button id="launch" onclick="loginPopupOpen()">Launch</buttonid>
-                <!-- <button id="register">Register</button> -->
+            <a id="launch" href="./app">Launch</a>
+            <!-- <button id="launch" onclick="loginPopupOpen()">Launch</button> -->
+            <!-- <button id="register">Register</button> -->
         </div>
     </header>
+    <!--
     <div id="popup-backdrop" onclick="loginPopupClose()"></div>
     <div id="login-popup">
         <div id="form">
@@ -86,6 +87,7 @@
             </div>
         </div>
     </div>
+    -->
     <div id="hands-container">
         <img src="./assets/icons/helping_hands.svg" alt="Hand Image" draggable="false">
         <img src="./assets/icons/helping_hands.svg" alt="Hand Image" draggable="false">
@@ -118,7 +120,8 @@
                 <h4>Ever wanted to volunteer but didn't know how?</h4>
                 <p>Helping Hands connects helpers with those in need to make the process seamless.</p>
             </div>
-            <button onclick="loginPopupOpen()">Get Started</button>
+            <!-- <button onclick="loginPopupOpen()">Get Started</button> -->
+            <a href="./app">Get Started</a>
         </section>
         <section id="features">
             <div>
@@ -176,7 +179,7 @@
         </section>
         <div id="cta-2">
             <p>What are you waiting for?</p>
-            <button onclick="loginPopupOpen()">JUMP IN</button>
+            <a href="./app">JUMP IN</a>
         </div>
     </main>
     <footer>
@@ -191,11 +194,5 @@
     </footer>
 
 </body>
-
-<!-- <script>
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('./scripts/service-worker.js');
-    }    
-</script> -->
 
 </html>
