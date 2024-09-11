@@ -2,7 +2,14 @@
   font-family: "Rubik";
   font-style: normal;
   font-display: fallback;
-  src: url("assets/fonts/Rubik-VariableFont_wght.ttf") format("truetype");
+  src: url("../fonts/Rubik-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-display: fallback;
+  src: url("../fonts/Inter-VariableFont_wght.ttf") format("truetype");
 }
 
 [debug] {

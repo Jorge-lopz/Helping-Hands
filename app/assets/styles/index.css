@@ -1,0 +1,51 @@
+#sidebar-toggle {
+  position: fixed;
+  inset: 15px 2px;
+  padding: 4px 5px 1px;
+  width: min-content;
+  height: min-content;
+  border-radius: 8px;
+  z-index: 999;
+  background-color: transparent;
+  transition: background-color 0.15s linear;
+  &:hover {
+    background-color: #00000011;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  padding: 25px;
+  padding-top: 75px;
+  text-align: left;
+  margin: 0;
+  top: 0;
+  left: 0;
+  width: 10vw;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: 2px 0 20px rgba(0, 0, 0, 0.07);
+  overflow: auto;
+
+  a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 400;
+    display: flex;
+    gap: 8px;
+    padding-inline: 10px;
+    border-radius: 8px;
+    transition: background-color 0.15s linear;
+    &:hover {
+      background-color: #00000011;
+    }
+
+    img {
+      width: 28px;
+    }
+
+    p {
+      margin-block: 12px;
+    }
+  }
+}
