@@ -61,7 +61,6 @@ body {
   transform: translateX(-50%); */
   max-width: 1530px;
   margin-inline: auto;
-  padding: 0 10px;
   overflow-x: hidden;
 }
 
