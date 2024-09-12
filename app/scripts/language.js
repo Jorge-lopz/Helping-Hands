@@ -1,18 +1,27 @@
 function loadLanguage() {
-  fetch(`../locales/${window.lang}/${window.page}.json`)
+  let url = `./locales/${window.lang}/${window.page}.json`;
+  fetch(url, { method: "HEAD" })
+    .then((response) => {
+      if (!response.ok) throw new Error(`File not found: ${url}`);
+      return fetch(url);
+    })
     .then((response) => response.json())
     .then((data) => {
       // Update content with the loaded language data
       for (const [key, value] of Object.entries(data)) {
-        if (contentElements[key]) {
-          contentElements[key].textContent = value;
+        if (document.getElementById(key)) {
+          document.getElementById(key).textContent = value;
         }
       }
     })
-    .catch(() => {
-      console.error("Error loading language:", window.lang, ", defaulting to English");
-      window.lang = "en";
-      loadLanguage();
+    .catch((error) => {
+      console.warn(`Error loading language: ${window.lang}, defaulting to English`);
+
+      if (window.lang !== "en") {
+        localStorage.setItem("lang", "en");
+        window.lang = "en";
+        loadLanguage();
+      }
     });
 }
 

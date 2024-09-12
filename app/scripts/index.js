@@ -9,13 +9,13 @@ if (!localStorage.getItem("lang")) {
 window.lang = localStorage.getItem("lang");
 
 let path = parseURL();
-window.page = path[1] || "home.html";
+window.page = path[1] || "home";
 loadComponent();
 
 // Detect URL change and load the matching component
 window.addEventListener("popstate", () => {
   if (parseURL()[1] != window.page) {
-    window.page = path[1] || "home.html";
+    window.page = path[1] || "home";
     loadComponent();
   }
 });
