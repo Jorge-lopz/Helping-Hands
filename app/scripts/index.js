@@ -1,6 +1,4 @@
-import routes from "./routes.js";
 import { parseURL } from "./utilities.js";
-import { loadLanguage } from "./language.js";
 import { loadComponent } from "./components.js";
 
 const content = document.getElementById("content");
@@ -13,12 +11,11 @@ window.lang = localStorage.getItem("lang");
 let path = parseURL();
 window.page = path[1] || "home.html";
 loadComponent();
-loadLanguage();
 
+// Detect URL change and load the matching component
 window.addEventListener("popstate", () => {
   if (parseURL()[1] != window.page) {
     window.page = path[1] || "home.html";
     loadComponent();
-    loadLanguage();
   }
 });

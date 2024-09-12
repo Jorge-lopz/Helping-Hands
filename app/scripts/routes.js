@@ -1,22 +1,18 @@
 const routes = {
-  en: {
-    search: "search.html",
-    home: "home.html",
-    friends: "friends.html",
-    notifications: "notifications.html",
-    settings: "settings.html",
-    item: "item.html",
-    profile: "profile.html",
-  },
-  es: {
-    search: "search_es.html",
-    home: "home_es.html",
-    friends: "friends_es.html",
-    notifications: "notifications_es.html",
-    settings: "settings_es.html",
-    item: "item_es.html",
-    profile: "profile_es.html",
-  },
+  search: "search.html",
+  busqueda: "search.html",
+  home: "home.html",
+  friends: "friends.html",
+  amigos: "friends.html",
+  notifications: "notifications.html",
+  notificaciones: "notifications.html",
+  avisos: "notifications.html",
+  settings: "settings.html",
+  ajustes: "settings.html",
+  preferencias: "settings.html",
+  preferences: "settings.html",
+  profile: "profile.html",
+  perfil: "profile.html",
 };
 
 export default routes;
