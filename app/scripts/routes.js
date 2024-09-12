@@ -17,7 +17,6 @@ const routes = {
     item: "item_es.html",
     profile: "profile_es.html",
   },
-  // Add more languages as needed
 };
 
 export default routes;

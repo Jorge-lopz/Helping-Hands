@@ -53,6 +53,7 @@
     color: #000;
     font-weight: 400;
     display: flex;
+    cursor: pointer;
     gap: 8px;
     padding-inline: 10px;
     border-radius: 8px;
