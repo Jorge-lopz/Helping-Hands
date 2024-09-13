@@ -38,7 +38,7 @@ document.querySelector(".sidebar").addEventListener("click", function (event) {
 // Detect URL change and load the matching component
 window.addEventListener("pageChange", () => {
   path = parseURL();
-  if (parseURL()[1] != window.page) {
+  if (path[1] != window.page) {
     window.page = path[1] || "home";
     loadComponent();
   }
