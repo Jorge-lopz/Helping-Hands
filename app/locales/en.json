@@ -1,0 +1,10 @@
+{
+  "home": {
+    "title": "Welcome to the main page",
+    "description": "This is the main page content."
+  },
+  "search": {
+    "title": "Welcome to the search page",
+    "description": "This is the search page content."
+  }
+}

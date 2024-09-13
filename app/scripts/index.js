@@ -25,9 +25,19 @@ document.querySelector(".sidebar").addEventListener("click", function (event) {
   if (url) window.history.replaceState("", "", url);
 });
 
+// Override the replaceState method (Adding custom event)
+(function () {
+  const originalReplaceState = window.history.replaceState;
+  window.history.replaceState = function (...args) {
+    originalReplaceState.apply(window.history, args);
+    // Create and dispatch a custom event
+    window.dispatchEvent(new Event("pageChange"));
+  };
+})();
+
 // Detect URL change and load the matching component
-window.addEventListener("popstate", () => {
-  console.log("Hi");
+window.addEventListener("pageChange", () => {
+  path = parseURL();
   if (parseURL()[1] != window.page) {
     window.page = path[1] || "home";
     loadComponent();

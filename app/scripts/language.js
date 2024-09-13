@@ -1,5 +1,5 @@
 function loadLanguage() {
-  let url = `./locales/${window.lang}/${window.page}.json`;
+  let url = `./locales/${window.lang}.json`;
   fetch(url, { method: "HEAD" })
     .then((response) => {
       if (!response.ok) throw new Error(`File not found: ${url}`);
@@ -8,7 +8,7 @@ function loadLanguage() {
     .then((response) => response.json())
     .then((data) => {
       // Update content with the loaded language data
-      for (const [key, value] of Object.entries(data)) {
+      for (const [key, value] of Object.entries(data[window.page])) {
         if (document.getElementById(key)) {
           document.getElementById(key).textContent = value;
         }
