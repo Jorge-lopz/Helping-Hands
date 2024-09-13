@@ -1,15 +1,6 @@
 import { parseURL } from "./utilities.js";
 import { loadComponent } from "./components.js";
 
-// TODO (Handle Routing)
-function handleRouting() {
-  const path = window.location.pathname;
-
-  if (path.startsWith("/app/")) {
-    window.history.replaceState("", "", path);
-  }
-}
-
 if (!localStorage.getItem("lang")) {
   localStorage.setItem("lang", "en"); // TODO (Based on browser / system preferences, IP or location)
 }
@@ -22,7 +13,7 @@ loadComponent();
 // Sidebar navigation
 document.querySelector(".sidebar").addEventListener("click", function (event) {
   let url = event.target.closest("a")?.id;
-  if (url) window.history.replaceState("", "", url);
+  if (url) window.history.replaceState("", "", url.replace(/^home$/, "/app"));
 });
 
 // Override the replaceState method (Adding custom event)

@@ -45,6 +45,7 @@ html {
     overflow: hidden;
 
     div {
+      transition: opacity 0.4s;
       opacity: 0;
     }
   }
@@ -53,7 +54,7 @@ html {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
-    transition: opacity 0.2s;
+    transition: opacity 0.25s 0.1s;
   }
 
   a {
@@ -83,5 +84,9 @@ html {
 
 #content {
   margin-left: 21ch;
+  transition: margin-left 0.35s ease;
   flex-grow: 1;
+}
+.sidebar.close + #content {
+  margin-left: 0;
 }

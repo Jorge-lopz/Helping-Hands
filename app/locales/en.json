@@ -6,5 +6,9 @@
   "search": {
     "title": "Welcome to the search page",
     "description": "This is the search page content."
+  },
+  "friends": {
+    "title": "Welcome to the friends page",
+    "description": "This is the friends page content."
   }
 }
