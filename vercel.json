@@ -3,6 +3,6 @@
     { "src": "^/app/(friends|search|notifications|settings|profile)/(.*)$", "dest": "/app/$1.html?invalid=$2" },
     { "src": "^/app/(search|friends|notifications|settings|profile)$", "dest": "/app/$1.html" },
     { "src": "^/app/$", "dest": "/app/index.html" },
-    { "src": "/(.*)", "dest": "/index.html" }
+    { "src": ".*", "dest": "/index.html" }
   ]
 }
