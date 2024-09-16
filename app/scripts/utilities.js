@@ -29,7 +29,7 @@ function parseURL() {
 
 function changePage() {
   let path = parseURL();
-  if (path[1] != window.page) {
+  if (path[1] != window.page || "home") {
     window.page = path[1] || "home";
     document.getElementsByTagName("title")[0].innerHTML = `Helping Hands | ${window.page.capitalize()}`;
     loadComponent();
