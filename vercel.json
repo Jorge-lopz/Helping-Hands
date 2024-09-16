@@ -1,7 +1,16 @@
 {
   "routes": [
-    { "src": "^/app/.*", "dest": "app/index.html" },
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "status": 404, "dest": "app/index.html" }
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "^/app/.*",
+      "dest": "app/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "status": 404,
+      "dest": "app/index.html"
+    }
   ]
 }
