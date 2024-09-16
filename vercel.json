@@ -4,13 +4,16 @@
       "handle": "filesystem"
     },
     {
-      "src": "^/app/.*",
-      "dest": "app/index.html"
+      "src": "^/app/([^/]+)$",
+      "dest": "/app/$1.html"
+    },
+    {
+      "src": "^/app/([^/]+)/(.+)$",
+      "dest": "/app/$1.html?error=$2"
     },
     {
       "src": "/(.*)",
-      "status": 404,
-      "dest": "app/index.html"
+      "dest": "/index.html"
     }
   ]
 }
