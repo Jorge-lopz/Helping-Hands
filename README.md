@@ -24,7 +24,7 @@
 
 ## 📄 License
 
-This project is licensed under the MIT Non-Commercial Licensee - see the [LICENSE](LICENSE) file for details.
+This project is licensed under a Non-Commercial Software License - see the [LICENSE](LICENSE) file for details.
 
 <br>
 <div align="center">
