@@ -30,6 +30,7 @@ This project is licensed under a Non-Commercial Software License - see the [LICE
 <div align="center">
 
   <img src="https://wakatime.com/badge/user/43299b95-37b5-4319-89dd-7bbef7fb1dcb/project/6b80951e-1695-42cb-b479-ceb54a5bb141.svg?style=social">
+  &nbsp;<img src="https://visitor-badge.laobi.icu/badge?page_id=jorge-lopz.helpinghands">
   
 </div>
 
